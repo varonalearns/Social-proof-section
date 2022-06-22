@@ -1,0 +1,229 @@
+/*----------------------------------------------------------------------------
+Mobile Design First / Fallback
+------------------------------------------------------------------------------*/
+
+/*-------------
+Variables
+---------------*/
+:root {
+    /* Primary colors */
+    --clr-primary-1: hsl(300, 43%, 22%);
+    --clr-primary-2: hsl(333, 80%, 67%);
+
+    /* Neutral colors */
+    --clr-secondary-1: hsl(303, 10%, 53%);
+    --clr-secondary-2: hsl(300, 24%, 96%);
+    --clr-secondary-3: hsl(0, 0%, 100%);
+
+    /* Fonts */
+    --ff-primary: 'Spartan', sans-serif;
+}
+
+/*-------------
+Global Styles
+---------------*/
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    /* min-height: 100vh; */
+    font-family: var(--ff-primary);
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-secondary-3);
+    position: relative;
+}
+main {
+    margin: 5rem 1rem;
+}
+h1 {
+    color: var(--clr-primary-1);
+    margin-bottom: 1rem;
+}
+footer {
+    text-align: center;
+}
+a {
+    color: var(--clr-primary-1);
+}
+
+/* Tablet Global Design */
+@media screen and (min-width: 750px) {
+    main {
+        margin: 10rem 3rem;
+        font-size: 1.25rem;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    footer { 
+        font-size: 1.5rem;
+    }
+}
+
+/* Desktop Global Design */
+@media screen and (min-width: 1200px) {
+    main,
+    footer {
+        max-width: 1440px;
+    }
+}
+/*-------------
+Class Styles
+---------------*/
+/* START: bg pattern top */
+.bg-pattern-top {
+    background-image: url('/images/bg-pattern-top-mobile.svg');
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* END: bg pattern top */
+
+/* START: headline section */
+.headline {
+    text-align: center;
+}
+.headline p {
+    color: var(--clr-secondary-1);
+    margin-bottom: 2rem;
+}
+/* END: headline section */
+
+/* START: rated-stars section */
+.rated-container {
+    background-color: var(--clr-secondary-2);
+    border-radius: 10px;
+    padding: 1rem 0.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.stars {
+    margin-bottom: 1rem;
+}
+.rated {
+    color: var(--clr-primary-1);
+    font-weight: 700;
+}
+/* END: rated-stars section */
+
+/* START: reviews section */
+.reviews {
+    margin-top: 3rem;
+}
+.reviewer {
+    color: var(--clr-secondary-3);
+    background-color: var(--clr-primary-1);
+    border-radius: 10px;
+    padding: 2.5rem 1.5rem;
+    margin-bottom: 1rem;
+}
+.reviewer-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.reviewer-section img {
+    border-radius: 50%;
+    width: 20%;
+    margin-right: 1.5rem;
+}
+.review-info {
+    text-align: left;
+}
+.reviewer-info .title {
+    color: var(--clr-primary-2);
+}
+/* END: reviews section */
+
+/* START: bg pattern bottom */
+.bg-pattern-btm {
+    background-image: url('/images/bg-pattern-bottom-mobile.svg');
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+/* END: bg pattern bottom */
+
+/* Tablet Class Designs */
+@media screen and (min-width: 750px) {
+    .bg-pattern-top {
+        height: 400px;
+        width: 85%;
+    }
+    .stars img {
+        width: 1.5rem;
+    }
+    .reviewer-section img {
+        width: 15%;
+    }
+    .bg-pattern-btm {
+        height: 400px;
+        width: 85%;
+    }
+}
+
+/* Desktop Class Designs */
+@media screen and (min-width:1200px) {
+    .bg-pattern-top {
+        height: 25rem;
+        width: 50%;
+    }
+    .container {
+        display: flex;
+    }
+    .headline {
+        width: 35%;
+        text-align: left;
+        margin-right: 5rem;
+    }
+    .rated-stars {
+        width: 60%;
+    }
+    .rated-container {
+        display: flex;
+        padding: 1.25rem;
+        align-items: center; 
+        width: 85%;
+    }
+    .mid-container {
+        margin-left: 3rem;
+    }
+    .btm-container {
+        margin-left: 6rem;
+    }
+    .stars { 
+        margin-right: 2rem;
+        margin-bottom: 0;
+    }
+    .reviews {
+        display: flex;
+        justify-content: space-between;
+    }
+    .reviewer {
+        width: 32%;
+        height: 19rem;
+    }
+    .second-reviewer {
+        margin-top: 1rem;
+    }
+    .third-reviewer {
+        margin-top: 2rem;
+    }
+    .bg-pattern-btm {
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+    }
+}
